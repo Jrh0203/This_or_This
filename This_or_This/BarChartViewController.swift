@@ -9,6 +9,13 @@
 import UIKit
 import Charts
 
+/*class myValueFormatter : ValueFormatter{
+    @objc func getFormattedValue(index: Float, original: String, dataSetIndex: Int, viewPortHandler: ChartViewPortHandler) -> String{
+        print(original);
+        return "\(Int(original))"
+    }
+}*/
+
 class BarChartViewController: UIViewController {
     var months: [String]!
     var left: Int?
@@ -17,16 +24,16 @@ class BarChartViewController: UIViewController {
     @IBOutlet var barChartView: BarChartView!
   
 
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(dataPoints: [String], values: [Int?]) {
         barChartView.noDataText = "You need to provide data for the chart."
         
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = BarChartDataEntry(value: Double(values[i]!), xIndex: i)
             dataEntries.append(dataEntry)
         }
-        
+        barChartView.frame = CGRectMake(0,0,self.view.frame.width,self.view.frame.height * 0.1)
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
         barChartView.descriptionText = ""
         chartDataSet.colors = ChartColorTemplates.colorful()
@@ -34,6 +41,7 @@ class BarChartViewController: UIViewController {
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         
         barChartView.xAxis.labelFont = barChartView.xAxis.labelFont.fontWithSize(15)
+        
         barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.drawGridLinesEnabled = false
         barChartView.xAxis.drawGridLinesEnabled = false
@@ -43,7 +51,7 @@ class BarChartViewController: UIViewController {
         barChartView.rightAxis.drawLabelsEnabled = false
         barChartView.legend.enabled = false
         barChartView.drawGridBackgroundEnabled = false
-        //barChartView.xAxis.valueFormatter = NSValueTransformer()
+        
         //barChartView.xAxis.valueFormatter.minimumFractionDigits=0
         
         barChartView.data = chartData
@@ -51,8 +59,10 @@ class BarChartViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        left = 10
+        right = 20
         months = ["Jan", "Feb"]
-        let unitsSold = [Double(left!), Double(right!)]
+        let unitsSold = [left, right]
         
         setChart(months, values: unitsSold)
         // Do any additional setup after loading the view.
