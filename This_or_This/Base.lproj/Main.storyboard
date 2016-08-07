@@ -245,5 +245,27 @@
             </objects>
             <point key="canvasLocation" x="1224.5" y="-378.5"/>
         </scene>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="7Do-xp-7OF">
+            <objects>
+                <viewController id="BKY-7R-rRh" customClass="BarChartViewController" customModule="iOSChartsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mGf-9C-Fya"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZB-jA-LqO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e73-eA-mDd" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="barChartView" destination="e73-eA-mDd" id="2y4-Ns-SJy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nw6-gC-txa" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="474"/>
+        </scene>
     </scenes>
 </document>
