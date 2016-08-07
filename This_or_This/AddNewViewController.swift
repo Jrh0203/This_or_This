@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class AddNewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var rightAddImage: UIImageView!
     @IBOutlet weak var leftAddImage: UIImageView!
     @IBOutlet weak var leftAddOption: UITextField!
