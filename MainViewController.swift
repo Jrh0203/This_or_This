@@ -93,9 +93,12 @@ class MainViewController: UIViewController {
                         }
                         
                     }
-                    
-                    let url = NSURL(string: "http://172.28.249.99/images/img0.png")
-                    let url2 = NSURL(string: "http://172.28.249.99/images/img1.png")
+                    print("we got here")
+                    var temp = "http://172.28.249.99/images/"+self.someInts[self.num].leftWord
+                    //print(temp)
+                    var temp2 = "http://172.28.249.99/images/"+self.someInts[self.num].rightWord
+                    let url = NSURL(string: temp)
+                    let url2 = NSURL(string: temp2)
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                         let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
@@ -112,7 +115,7 @@ class MainViewController: UIViewController {
                             print("WOAH DUDE3")
                         });
                     }
-
+                    self.updateThings()
 
                     
                     print(self.someInts[self.num].question)
@@ -129,8 +132,7 @@ class MainViewController: UIViewController {
                     //}
                     
                 }
-                print(self.someInts)
-
+                //print(self.someInts)
                 
         }
         

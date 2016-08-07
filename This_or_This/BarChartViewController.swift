@@ -38,6 +38,7 @@ class BarChartViewController: UIViewController {
         barChartView.descriptionText = ""
         chartDataSet.colors = ChartColorTemplates.colorful()
         chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(60);
+        chartDataSet.valueColors = ChartColorTemplates.joyful()
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         
         barChartView.xAxis.labelFont = barChartView.xAxis.labelFont.fontWithSize(15)
