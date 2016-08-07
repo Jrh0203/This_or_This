@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var rightButton: UIButton!
     var screenNumber: NSString?
     var currQuestion: String?
+    var num: Int = 0
     
     
     
@@ -37,6 +38,7 @@ class MainViewController: UIViewController {
     //Alamofire.request(.GET, "http://172.28.249.99/tot/newQuestion.php", parameters:["name":name!, "question":question!])
     override func viewDidLoad() {
         super.viewDidLoad()
+        num=0;
         var someInts = [Quest]()
         
         Alamofire.request(.GET, "http://172.28.249.99/tot/getQuestions1.php")
@@ -63,7 +65,8 @@ class MainViewController: UIViewController {
                         }
                         
                     }
-                    print(someInts[1].question)
+                    print(someInts[self.num].question)
+                    self.qlabel.text=someInts[self.num].question
                     
                     //print (info)
                     //for (key,subJson):(String, JSON) in json {
