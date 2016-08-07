@@ -39,15 +39,47 @@ class MainViewController: UIViewController {
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var qlabel: UILabel!
+    @IBOutlet var barChartView: BarChartView!
     var screenNumber: NSString?
     var currQuestion: String?
     var num: Int = 0
     var someInts = [Quest]()
+    var months: [String]!
     
     
     
 
     //Alamofire.request(.GET, "http://172.28.249.99/tot/newQuestion.php", parameters:["name":name!, "question":question!])
+    func setChart(dataPoints: [String], values: [Double]) {
+        barChartView.noDataText = "You need to provide data for the chart."
+        
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
+        barChartView.descriptionText = ""
+        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(100);
+        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        
+        barChartView.xAxis.labelFont = barChartView.xAxis.labelFont.fontWithSize(15)
+        barChartView.leftAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.drawAxisLineEnabled = false
+        barChartView.leftAxis.drawLabelsEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.legend.enabled = false
+        barChartView.drawGridBackgroundEnabled = false
+        
+        barChartView.data = chartData
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 1.0)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         num=0;
@@ -60,38 +92,14 @@ class MainViewController: UIViewController {
         rightImage.addGestureRecognizer(tapGestureRecognizer2)
         
         
-        var months: [String]!
         
-        func setChart(dataPoints: [String], values: [Double]) {
-            barChartView.noDataText = "You need to provide data for the chart."
-            
-            var dataEntries: [BarChartDataEntry] = []
-            
-            for i in 0..<dataPoints.count {
-                let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
-                dataEntries.append(dataEntry)
-            }
-            
-            let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
-            barChartView.descriptionText = ""
-            chartDataSet.colors = ChartColorTemplates.colorful()
-            chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(100);
-            let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
-            
-            barChartView.xAxis.labelFont = barChartView.xAxis.labelFont.fontWithSize(15)
-            barChartView.leftAxis.drawGridLinesEnabled = false
-            barChartView.rightAxis.drawGridLinesEnabled = false
-            barChartView.xAxis.drawGridLinesEnabled = false
-            barChartView.leftAxis.drawAxisLineEnabled = false
-            barChartView.rightAxis.drawAxisLineEnabled = false
-            barChartView.leftAxis.drawLabelsEnabled = false
-            barChartView.rightAxis.drawLabelsEnabled = false
-            barChartView.legend.enabled = false
-            barChartView.drawGridBackgroundEnabled = false
-            
-            barChartView.data = chartData
-            barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 1.0)
-        }
+        
+        
+        
+        months = ["Jan", "Feb"]
+        let unitsSold = [25.0, 25.0]
+        
+        setChart(months, values: unitsSold)
         
         Alamofire.request(.GET, "http://172.28.249.99/tot/getQuestions1.php")
             .responseJSON { response in
