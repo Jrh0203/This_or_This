@@ -53,7 +53,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        num=0;
         
             let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTappedLeft:"))
             leftImage.userInteractionEnabled = true
@@ -61,81 +60,38 @@ class MainViewController: UIViewController {
         let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("imageTappedRight:"))
         rightImage.userInteractionEnabled = true
         rightImage.addGestureRecognizer(tapGestureRecognizer2)
+
+        refresh()
         
         
-        
-        
-        
-        
-        
-        
+    }
+    
+    func refresh()
+    {
+        self.num=0
         Alamofire.request(.GET, "http://172.28.249.99/tot/getQuestions1.php")
             .responseJSON { response in
-                //print(response.request)  // original URL request
-                //print(response.response) // URL response
-                //print(response.data)     // server data
-                //print(response.result)   // result of response serialization
                 if let js = response.result.value {
                     //print("JSON: \(js)")
                     let json = JSON(js)
-                    
                     for (index,subJson):(String, JSON) in json {
-                        //Do something you want
-                        //print(index)
-                        //print(subJson[0])
-                        
                         for (index2,subsubJson):(String, JSON) in subJson {
-                            //Do something you want
-                            //print(index)
-                            //print(subsubJson)
                             var q = Quest(id: Int(subsubJson["id"].stringValue)!, question: subsubJson["content"].stringValue, left: subsubJson["yes"].int!, right: subsubJson["no"].int!, leftWord: subsubJson["leftImage"].stringValue, rightWord: subsubJson["rightImage"].stringValue, leftCaption: subsubJson["leftText"].stringValue, rightCaption: subsubJson["rightText"].stringValue)
                             self.someInts.append(q)
                         }
                         
                     }
-                    print("we got here")
-                    var temp = "http://172.28.249.99/images/"+self.someInts[self.num].leftWord
-                    //print(temp)
-                    var temp2 = "http://172.28.249.99/images/"+self.someInts[self.num].rightWord
-                    let url = NSURL(string: temp)
-                    let url2 = NSURL(string: temp2)
-                    
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.leftImage.image = UIImage(data: data!)
-                            print("WOAH DUDE")
-                        });
-                    }
-                    
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        let data2 = NSData(contentsOfURL: url2!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.rightImage.image = UIImage(data: data2!)
-                            print("WOAH DUDE3")
-                        });
-                    }
+                    print(self.someInts)
+                    print("strange")
                     self.updateThings()
-
+                    
                     
                     print(self.someInts[self.num].question)
                     self.qlabel.text=self.someInts[self.num].question
                     
-                    //print (info)
-                    //for (key,subJson):(String, JSON) in json {
-                        //Do something you want
-                        //print(json[0])
-                        //print(key)
-                        //print(subJson)
-                        //var q = Quest(id: Int(key)!, question: subJson.string!)
-                        //someInts.append(q)
-                    //}
-                    
                 }
                 //print(self.someInts)
-                
         }
-        
     }
     
     func imageTappedLeft(img: AnyObject)
@@ -143,6 +99,7 @@ class MainViewController: UIViewController {
         // Your action
         print("tapped left")
         Alamofire.request(.GET, "http://172.28.249.99/tot/vote.php", parameters:["questionid":someInts[self.num].id, "vote":"YES"])
+        self.someInts[self.num].left++;
         self.performSegueWithIdentifier("graphit", sender: self)
     }
     func imageTappedRight(img: AnyObject)
@@ -150,17 +107,21 @@ class MainViewController: UIViewController {
         // Your action
         print("tapped right")
         Alamofire.request(.GET, "http://172.28.249.99/tot/vote.php", parameters:["questionid":someInts[self.num].id, "vote":"NO"])
+        self.someInts[self.num].right++;
         self.performSegueWithIdentifier("graphit", sender: self)
     }
     
     func updateThings(){
         print("update")
-        self.leftButton.text=(someInts[self.num].leftCaption)
+        print(self.num)
+        print(someInts)
+        self.leftButton.text=(self.someInts[self.num].leftCaption)
         print(self.someInts[self.num].leftCaption)
-        self.rightButton.text=(someInts[self.num].rightCaption)
-        self.qlabel.text=someInts[self.num].question
+        self.rightButton.text=(self.someInts[self.num].rightCaption)
+        self.qlabel.text=self.someInts[self.num].question
         
         self.leftImage.image = UIImage(named:"loading.png");
+        self.rightImage.image = UIImage(named:"loading.png");
         
         var temp = "http://172.28.249.99/images/"+self.someInts[self.num].leftWord
         //print(temp)
@@ -198,6 +159,14 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
+        print(self.someInts)
+        self.someInts.removeAll()
+        self.someInts = [Quest]()
+        print(self.someInts)
+        refresh()
+        //updateThings()
     }
     
     

@@ -33,15 +33,15 @@ class BarChartViewController: UIViewController {
             let dataEntry = BarChartDataEntry(value: Double(values[i]!), xIndex: i)
             dataEntries.append(dataEntry)
         }
-        barChartView.frame = CGRectMake(0,0,self.view.frame.width,self.view.frame.height * 0.1)
+        barChartView.frame = CGRectMake(0,0,self.view.frame.width,self.view.frame.height * 0.05)
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
-        barChartView.descriptionText = ""
         chartDataSet.colors = ChartColorTemplates.colorful()
         chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(50)
         chartDataSet.valueColors = ChartColorTemplates.joyful()
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         
         barChartView.xAxis.labelFont = barChartView.xAxis.labelFont.fontWithSize(15)
+        barChartView.descriptionText="";
         
         barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.drawGridLinesEnabled = false
@@ -55,6 +55,8 @@ class BarChartViewController: UIViewController {
         
         barChartView.leftAxis.axisMinValue = 0;
         barChartView.rightAxis.axisMinValue = 0;
+        barChartView.leftAxis.axisMaxValue+=10;
+        barChartView.rightAxis.axisMaxValue+=10;
         
         barChartView.data = chartData
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 1.0)
@@ -62,8 +64,6 @@ class BarChartViewController: UIViewController {
     override func viewDidLoad() {
         //self.view.userInteractionEnabled = false
         super.viewDidLoad()
-        left = 10
-        right = 20
         months = ["", ""]
         let unitsSold = [left, right]
         
@@ -84,6 +84,9 @@ class BarChartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
