@@ -23,6 +23,7 @@
 		1228D5CE1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */; };
 		1228D5CF1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */; };
 		122E6FAD1D573EEB009A4452 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */; };
+		4C1FC8651D57819100C7C316 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1FC8641D57819100C7C316 /* loading.png */; };
 		4FFCACF4687995F5F441E815 /* Pods_This_or_This.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF09F3BDE6730115ACDF60A1 /* Pods_This_or_This.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		27B9B4E58BF8CA674C1FA941 /* Pods-This_or_This.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-This_or_This.release.xcconfig"; path = "Pods/Target Support Files/Pods-This_or_This/Pods-This_or_This.release.xcconfig"; sourceTree = "<group>"; };
 		40485D60A8231639FCBC2EC4 /* Pods-This_or_This.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-This_or_This.debug.xcconfig"; path = "Pods/Target Support Files/Pods-This_or_This/Pods-This_or_This.debug.xcconfig"; sourceTree = "<group>"; };
+		4C1FC8641D57819100C7C316 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = ../../../Downloads/loading.png; sourceTree = "<group>"; };
 		5CE394D050341F1A157DFDBC /* Pods_This_or_ThisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_This_or_ThisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64076DDF9829AD1BCD5E2B18 /* Pods_This_or_ThisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_This_or_ThisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF09F3BDE6730115ACDF60A1 /* Pods_This_or_This.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_This_or_This.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,8 @@
 		1228D5991D563CF0002C5EE9 /* This_or_This */ = {
 			isa = PBXGroup;
 			children = (
+				4C1FC8641D57819100C7C316 /* loading.png */,
+				4C1FC86A1D57830C00C7C316 /* resources */,
 				1208CD291D56568900EEF923 /* MainViewController.swift */,
 				122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */,
 				1208CD2D1D565D2200EEF923 /* AddNewViewController.swift */,
@@ -205,6 +209,13 @@
 				27B9B4E58BF8CA674C1FA941 /* Pods-This_or_This.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C1FC86A1D57830C00C7C316 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		87A98ADA9118921839FE9720 /* Frameworks */ = {
@@ -367,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1FC8651D57819100C7C316 /* loading.png in Resources */,
 				1228D5A91D563CF0002C5EE9 /* LaunchScreen.storyboard in Resources */,
 				1228D5CD1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */,
 				1228D5A61D563CF0002C5EE9 /* Assets.xcassets in Resources */,

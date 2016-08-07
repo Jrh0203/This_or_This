@@ -160,6 +160,7 @@ class MainViewController: UIViewController {
         self.rightButton.text=(someInts[self.num].rightCaption)
         self.qlabel.text=someInts[self.num].question
         
+        self.leftImage.image = UIImage(named:"loading.png");
         
         var temp = "http://172.28.249.99/images/"+self.someInts[self.num].leftWord
         //print(temp)
