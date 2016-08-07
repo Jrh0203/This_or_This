@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzg-BS-kpl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzg-BS-kpl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,31 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMF-bO-Leu">
-                                <rect key="frame" x="139" y="209" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter your username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovG-VK-yw1">
-                                <rect key="frame" x="56" y="97" width="262" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter your username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovG-VK-yw1">
+                                <rect key="frame" x="0.0" y="96" width="370" height="113"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKS-ai-QcZ">
-                                <rect key="frame" x="124" y="281" width="127" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKS-ai-QcZ">
+                                <rect key="frame" x="124" y="386" width="127" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <segue destination="y1f-lx-FRS" kind="show" identifier="loginSegue" id="oOE-nP-d2c"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMF-bO-Leu">
+                                <rect key="frame" x="31" y="269" width="308" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.83529411764705885" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="XMF-bO-Leu" firstAttribute="centerX" secondItem="5os-N7-oUw" secondAttribute="centerX" id="3ha-EL-imi"/>
                             <constraint firstItem="ovG-VK-yw1" firstAttribute="centerX" secondItem="5os-N7-oUw" secondAttribute="centerX" id="AIh-vI-tXX"/>
+                            <constraint firstItem="XMF-bO-Leu" firstAttribute="top" secondItem="ovG-VK-yw1" secondAttribute="bottom" constant="32" id="BfK-FV-zkV"/>
+                            <constraint firstItem="XMF-bO-Leu" firstAttribute="bottom" secondItem="yKS-ai-QcZ" secondAttribute="top" constant="-32" id="GBn-e9-xgX"/>
                             <constraint firstItem="yKS-ai-QcZ" firstAttribute="centerX" secondItem="5os-N7-oUw" secondAttribute="centerX" id="KCy-kt-Nk2"/>
                             <constraint firstItem="XMF-bO-Leu" firstAttribute="centerX" secondItem="5os-N7-oUw" secondAttribute="centerX" id="Xfs-KR-ehX"/>
+                            <constraint firstItem="yKS-ai-QcZ" firstAttribute="top" secondItem="XMF-bO-Leu" secondAttribute="bottom" constant="32" id="Zbu-uy-U5y"/>
+                            <constraint firstItem="XMF-bO-Leu" firstAttribute="centerY" secondItem="5os-N7-oUw" secondAttribute="centerY" id="lfc-5M-7BI"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GBn-e9-xgX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -50,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JH9-u6-2aZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="-342"/>
+            <point key="canvasLocation" x="86.5" y="-342.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a7B-cK-kTY">
@@ -128,7 +140,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.83529411760000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="RS8-hc-HaQ" firstAttribute="top" secondItem="UAh-w2-jvt" secondAttribute="bottom" constant="430" id="GkY-Oc-BtJ"/>
@@ -227,7 +239,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.83529411760000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rie-lb-buX" firstAttribute="top" secondItem="cym-Ye-46T" secondAttribute="bottom" constant="85" id="XkY-8w-fBc"/>
                             <constraint firstItem="G1W-84-qAl" firstAttribute="top" secondItem="sNO-5j-nmO" secondAttribute="bottom" id="c7g-hB-rco"/>
