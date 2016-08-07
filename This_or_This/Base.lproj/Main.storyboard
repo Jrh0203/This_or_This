@@ -82,19 +82,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vM-yi-smf">
-                                <rect key="frame" x="168" y="319" width="30" height="30"/>
-                                <state key="normal" title="Yes"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-Mk-Osd">
-                                <rect key="frame" x="200" y="319" width="30" height="30"/>
-                                <state key="normal" title="No"/>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-8K-UDF">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-8K-UDF">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="save" id="4LE-2B-YUf"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YzU-C8-lgV"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xsA-AC-Lt9"/>
                                     <barButtonItem systemItem="add" id="j2j-lS-pO3">
                                         <connections>
                                             <segue destination="WKU-gh-NwA" kind="presentation" identifier="newQuestionSegue" id="XDs-Bl-4Js"/>
@@ -102,8 +94,14 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-w2-jvt" userLabel="qlabel">
-                                <rect key="frame" x="12" y="37" width="357" height="203"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-qC-j6q">
+                                <rect key="frame" x="4" y="156" width="186" height="338"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ZI-3H-DUp">
+                                <rect key="frame" x="188" y="156" width="186" height="338"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="loading" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-w2-jvt" userLabel="qlabel">
+                                <rect key="frame" x="9" y="45" width="357" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="i3n-Jo-rAx"/>
                                 </constraints>
@@ -111,30 +109,61 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mal-Rq-qOk">
+                                <rect key="frame" x="76" y="579" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAc-YW-Lt8">
+                                <rect key="frame" x="260" y="579" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4vM-yi-smf" firstAttribute="leading" secondItem="kB0-Kh-roY" secondAttribute="leading" constant="168" id="8KU-D2-W9q"/>
                             <constraint firstItem="RS8-hc-HaQ" firstAttribute="top" secondItem="UAh-w2-jvt" secondAttribute="bottom" constant="430" id="GkY-Oc-BtJ"/>
+                            <constraint firstItem="s6g-8K-UDF" firstAttribute="leading" secondItem="kB0-Kh-roY" secondAttribute="leading" id="Npc-HT-LKX"/>
+                            <constraint firstAttribute="trailing" secondItem="s6g-8K-UDF" secondAttribute="trailing" id="Oyn-ky-Ie9"/>
                             <constraint firstItem="RS8-hc-HaQ" firstAttribute="top" secondItem="s6g-8K-UDF" secondAttribute="bottom" id="Uxa-wX-8eX"/>
-                            <constraint firstAttribute="trailing" secondItem="cCd-Mk-Osd" secondAttribute="trailing" constant="145" id="WEP-9v-Syd"/>
                             <constraint firstItem="UAh-w2-jvt" firstAttribute="top" secondItem="8AX-R1-J16" secondAttribute="bottom" constant="85" id="eSP-RG-Ec7"/>
                             <constraint firstItem="UAh-w2-jvt" firstAttribute="centerX" secondItem="kB0-Kh-roY" secondAttribute="centerX" id="g64-qO-JK4"/>
-                            <constraint firstItem="cCd-Mk-Osd" firstAttribute="baseline" secondItem="4vM-yi-smf" secondAttribute="baseline" id="gxD-xe-NP5"/>
-                            <constraint firstItem="4vM-yi-smf" firstAttribute="centerY" secondItem="kB0-Kh-roY" secondAttribute="centerY" id="v9i-YH-JQe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GkY-Oc-BtJ"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cCP-0z-u28" appends="YES" id="ciX-LD-RzT"/>
+                            <outletCollection property="gestureRecognizers" destination="TUS-5E-gA5" appends="YES" id="9ui-5Y-Lnp"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="leftButton" destination="4vM-yi-smf" id="jwj-qn-kZV"/>
+                        <outlet property="leftButton" destination="mal-Rq-qOk" id="FWm-qk-JqP"/>
+                        <outlet property="leftImage" destination="VzT-qC-j6q" id="3br-AF-EA3"/>
                         <outlet property="qlabel" destination="UAh-w2-jvt" id="Fri-32-jEO"/>
-                        <outlet property="rightButton" destination="cCd-Mk-Osd" id="EYo-5K-dgd"/>
+                        <outlet property="rightButton" destination="nAc-YW-Lt8" id="eOB-Ng-VPc"/>
+                        <outlet property="rightImage" destination="0ZI-3H-DUp" id="VWT-b7-Xbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC6-cE-XGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="TUS-5E-gA5"/>
+                <swipeGestureRecognizer direction="left" id="TUS-5E-gA5">
+                    <connections>
+                        <action selector="swipeLeft:" destination="y1f-lx-FRS" id="Ema-cx-hjT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="cCP-0z-u28">
+                    <connections>
+                        <action selector="swipeRight:" destination="y1f-lx-FRS" id="XSG-A4-W5T"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="742.5" y="-503.5"/>
         </scene>
@@ -150,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Question" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rie-lb-buX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Question" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rie-lb-buX">
                                 <rect key="frame" x="16" y="100" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -171,9 +200,26 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-AU-fU3">
+                                <rect key="frame" x="4" y="156" width="186" height="338"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1G-0E-lw4">
+                                <rect key="frame" x="188" y="156" width="186" height="338"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-oo-Ww5">
+                                <rect key="frame" x="49" y="562" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-Sz-bkb">
+                                <rect key="frame" x="233" y="562" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rie-lb-buX" firstAttribute="top" secondItem="cym-Ye-46T" secondAttribute="bottom" constant="85" id="XkY-8w-fBc"/>
                             <constraint firstItem="G1W-84-qAl" firstAttribute="top" secondItem="sNO-5j-nmO" secondAttribute="bottom" id="c7g-hB-rco"/>
                         </constraints>
                     </view>
@@ -181,7 +227,11 @@
                     <connections>
                         <outlet property="cancelButton" destination="H5A-gj-8y0" id="J6W-Wc-3S5"/>
                         <outlet property="doneButton" destination="l87-Ba-gYC" id="cCg-OR-Nuk"/>
+                        <outlet property="leftAddImage" destination="aPs-AU-fU3" id="Ye9-bN-ZFu"/>
+                        <outlet property="leftAddOption" destination="XH2-oo-Ww5" id="viq-Zp-4uU"/>
                         <outlet property="questionField" destination="rie-lb-buX" id="SCK-HY-Cav"/>
+                        <outlet property="rightAddImage" destination="O1G-0E-lw4" id="Pt8-MZ-Smb"/>
+                        <outlet property="rightAddOption" destination="Hqe-Sz-bkb" id="fEV-kJ-QRg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMW-Hz-pRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
