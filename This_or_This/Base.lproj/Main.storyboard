@@ -60,7 +60,7 @@
                         <viewControllerLayoutGuide type="top" id="qJH-dD-Lt0"/>
                         <viewControllerLayoutGuide type="bottom" id="H8d-8K-1lE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rkS-Ql-woO">
+                    <view key="view" contentMode="scaleToFill" id="rkS-Ql-woO" customClass="BarChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnv-cV-kWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742.5" y="-1352.5"/>
+            <point key="canvasLocation" x="1252.5" y="-1334.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="jyJ-Pl-27r">
@@ -83,18 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-8K-UDF">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="save" id="4LE-2B-YUf"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xsA-AC-Lt9"/>
-                                    <barButtonItem systemItem="add" id="j2j-lS-pO3">
-                                        <connections>
-                                            <segue destination="WKU-gh-NwA" kind="presentation" identifier="newQuestionSegue" id="XDs-Bl-4Js"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-qC-j6q">
                                 <rect key="frame" x="4" y="156" width="186" height="338"/>
                             </imageView>
@@ -122,6 +110,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-8K-UDF">
+                                <rect key="frame" x="-1" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="save" id="4LE-2B-YUf"/>
+                                    <barButtonItem title="Votes" id="8b9-DV-9TZ">
+                                        <connections>
+                                            <segue destination="4dv-FP-VgE" kind="show" id="tFp-f6-1IL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xsA-AC-Lt9"/>
+                                    <barButtonItem systemItem="add" id="j2j-lS-pO3">
+                                        <connections>
+                                            <segue destination="WKU-gh-NwA" kind="presentation" identifier="newQuestionSegue" id="XDs-Bl-4Js"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -167,7 +172,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="742.5" y="-503.5"/>
+            <point key="canvasLocation" x="740.5" y="-515.5"/>
         </scene>
         <!--Add New View Controller-->
         <scene sceneID="Ckf-e1-jga">
