@@ -22,6 +22,7 @@
 		1228D5CD1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */; };
 		1228D5CE1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */; };
 		1228D5CF1D563D91002C5EE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */; };
+		122E6FAD1D573EEB009A4452 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */; };
 		4FFCACF4687995F5F441E815 /* Pods_This_or_This.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF09F3BDE6730115ACDF60A1 /* Pods_This_or_This.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,13 @@
 			remoteGlobalIDString = 1228D5961D563CF0002C5EE9;
 			remoteInfo = This_or_This;
 		};
+		122E6FB21D573EEB009A4452 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1208CD2F1D566FEC00EEF923 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C545493B7DA99C0DEBE3AF4A0BC1E041;
+			remoteInfo = Charts;
+		};
 		12C210AE1D57231600CACD54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1208CD2F1D566FEC00EEF923 /* Pods.xcodeproj */;
@@ -84,6 +92,7 @@
 		1228D5BE1D563CF0002C5EE9 /* This_or_ThisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = This_or_ThisUITests.swift; sourceTree = "<group>"; };
 		1228D5C01D563CF0002C5EE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		27B9B4E58BF8CA674C1FA941 /* Pods-This_or_This.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-This_or_This.release.xcconfig"; path = "Pods/Target Support Files/Pods-This_or_This/Pods-This_or_This.release.xcconfig"; sourceTree = "<group>"; };
 		40485D60A8231639FCBC2EC4 /* Pods-This_or_This.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-This_or_This.debug.xcconfig"; path = "Pods/Target Support Files/Pods-This_or_This/Pods-This_or_This.debug.xcconfig"; sourceTree = "<group>"; };
 		5CE394D050341F1A157DFDBC /* Pods_This_or_ThisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_This_or_ThisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				1208CD351D566FED00EEF923 /* Alamofire.framework */,
+				122E6FB31D573EEB009A4452 /* Charts.framework */,
 				1208CD371D566FED00EEF923 /* Pods_This_or_This.framework */,
 				12C210AF1D57231600CACD54 /* SwiftyJSON.framework */,
 			);
@@ -154,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				1208CD291D56568900EEF923 /* MainViewController.swift */,
+				122E6FAC1D573EEB009A4452 /* BarChartViewController.swift */,
 				1208CD2D1D565D2200EEF923 /* AddNewViewController.swift */,
 				1228D5CC1D563D91002C5EE9 /* GoogleService-Info.plist */,
 				1228D59A1D563CF0002C5EE9 /* AppDelegate.swift */,
@@ -335,6 +346,13 @@
 			remoteRef = 1208CD361D566FED00EEF923 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		122E6FB31D573EEB009A4452 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 122E6FB21D573EEB009A4452 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		12C210AF1D57231600CACD54 /* SwiftyJSON.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -507,6 +525,7 @@
 				1228D5A11D563CF0002C5EE9 /* ModelController.swift in Sources */,
 				1228D59F1D563CF0002C5EE9 /* DataViewController.swift in Sources */,
 				1228D59B1D563CF0002C5EE9 /* AppDelegate.swift in Sources */,
+				122E6FAD1D573EEB009A4452 /* BarChartViewController.swift in Sources */,
 				1208CD2E1D565D2200EEF923 /* AddNewViewController.swift in Sources */,
 				1208CD2A1D56568900EEF923 /* MainViewController.swift in Sources */,
 			);

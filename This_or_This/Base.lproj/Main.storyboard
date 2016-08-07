@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzg-BS-kpl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzg-BS-kpl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -158,6 +158,9 @@
                         <outlet property="qlabel" destination="UAh-w2-jvt" id="Fri-32-jEO"/>
                         <outlet property="rightButton" destination="nAc-YW-Lt8" id="eOB-Ng-VPc"/>
                         <outlet property="rightImage" destination="0ZI-3H-DUp" id="VWT-b7-Xbp"/>
+                        <segue destination="BKY-7R-rRh" kind="popoverPresentation" identifier="graphit" popoverAnchorView="kB0-Kh-roY" id="rR7-kK-9Bz">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC6-cE-XGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +175,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="740.5" y="-515.5"/>
+            <point key="canvasLocation" x="716.5" y="-421.5"/>
         </scene>
         <!--Add New View Controller-->
         <scene sceneID="Ckf-e1-jga">
@@ -248,24 +251,25 @@
         <!--Bar Chart View Controller-->
         <scene sceneID="7Do-xp-7OF">
             <objects>
-                <viewController id="BKY-7R-rRh" customClass="BarChartViewController" customModule="iOSChartsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BKY-7R-rRh" customClass="BarChartViewController" customModule="This_or_This" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mGf-9C-Fya"/>
                         <viewControllerLayoutGuide type="bottom" id="gZB-jA-LqO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e73-eA-mDd" customClass="BarChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="barChartView" destination="e73-eA-mDd" id="2y4-Ns-SJy"/>
+                        <outlet property="barChartView" destination="e73-eA-mDd" id="SD5-UY-f3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nw6-gC-txa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="474"/>
+            <point key="canvasLocation" x="600.5" y="427.5"/>
         </scene>
     </scenes>
 </document>
