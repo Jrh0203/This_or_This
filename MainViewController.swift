@@ -158,6 +158,29 @@ class MainViewController: UIViewController {
         print(self.someInts[self.num].leftCaption)
         self.rightButton.text=(someInts[self.num].rightCaption)
         self.qlabel.text=someInts[self.num].question
+        
+        
+        var temp = "http://172.28.249.99/images/"+self.someInts[self.num].leftWord
+        //print(temp)
+        var temp2 = "http://172.28.249.99/images/"+self.someInts[self.num].rightWord
+        let url = NSURL(string: temp)
+        let url2 = NSURL(string: temp2)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+            dispatch_async(dispatch_get_main_queue(), {
+                self.leftImage.image = UIImage(data: data!)
+                print("WOAH DUDE")
+            });
+        }
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let data2 = NSData(contentsOfURL: url2!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+            dispatch_async(dispatch_get_main_queue(), {
+                self.rightImage.image = UIImage(data: data2!)
+                print("WOAH DUDE3")
+            });
+        }
     }
 
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
