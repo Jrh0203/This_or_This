@@ -150,6 +150,7 @@ class MainViewController: UIViewController {
         // Your action
         print("tapped right")
         Alamofire.request(.GET, "http://172.28.249.99/tot/vote.php", parameters:["questionid":someInts[self.num].id, "vote":"NO"])
+        self.performSegueWithIdentifier("graphit", sender: self)
     }
     
     func updateThings(){
@@ -211,6 +212,9 @@ class MainViewController: UIViewController {
             detailController.right = (someInts[self.num].right)
         }
         
+    }
+    @IBAction func viewGraph(sender: AnyObject) {
+        self.performSegueWithIdentifier("graphit", sender: self)
     }
 
     /*

@@ -60,6 +60,7 @@ class BarChartViewController: UIViewController {
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 1.0)
     }
     override func viewDidLoad() {
+        //self.view.userInteractionEnabled = false
         super.viewDidLoad()
         left = 10
         right = 20
@@ -70,6 +71,14 @@ class BarChartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
+        dismissViewControllerAnimated(true, completion: nil)
+        print("down")
+    }
+    @IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
+        dismissViewControllerAnimated(true, completion: nil)
+        print("left")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

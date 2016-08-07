@@ -110,14 +110,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mal-Rq-qOk">
-                                <rect key="frame" x="76" y="579" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAc-YW-Lt8">
-                                <rect key="frame" x="260" y="579" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mal-Rq-qOk">
+                                <rect key="frame" x="0.0" y="579" width="190" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,8 +120,10 @@
                                 <rect key="frame" x="-1" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="save" id="4LE-2B-YUf"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cw1-mg-nau"/>
                                     <barButtonItem title="Votes" id="8b9-DV-9TZ">
                                         <connections>
+                                            <action selector="viewGraph:" destination="y1f-lx-FRS" id="wzO-DM-x5p"/>
                                             <segue destination="4dv-FP-VgE" kind="show" id="tFp-f6-1IL"/>
                                         </connections>
                                     </barButtonItem>
@@ -139,6 +135,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAc-YW-Lt8">
+                                <rect key="frame" x="198" y="579" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.83529411760000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -170,9 +172,7 @@
                         <outlet property="qlabel" destination="UAh-w2-jvt" id="Fri-32-jEO"/>
                         <outlet property="rightButton" destination="nAc-YW-Lt8" id="eOB-Ng-VPc"/>
                         <outlet property="rightImage" destination="0ZI-3H-DUp" id="VWT-b7-Xbp"/>
-                        <segue destination="BKY-7R-rRh" kind="popoverPresentation" identifier="graphit" popoverAnchorView="kB0-Kh-roY" id="rR7-kK-9Bz">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="BKY-7R-rRh" kind="presentation" identifier="graphit" id="rR7-kK-9Bz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC6-cE-XGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,12 +228,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1G-0E-lw4">
                                 <rect key="frame" x="188" y="156" width="186" height="338"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-oo-Ww5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-oo-Ww5">
                                 <rect key="frame" x="49" y="562" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-Sz-bkb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-Sz-bkb">
                                 <rect key="frame" x="233" y="562" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -271,7 +271,7 @@
                     <view key="view" contentMode="scaleToFill" id="e73-eA-mDd" customClass="BarChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -280,8 +280,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nw6-gC-txa" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="iBc-5I-MEi"/>
-                <swipeGestureRecognizer direction="left" id="8bi-5t-eKp"/>
+                <swipeGestureRecognizer direction="down" id="iBc-5I-MEi">
+                    <connections>
+                        <action selector="swipeDown:" destination="BKY-7R-rRh" id="vJu-xI-m7q"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="8bi-5t-eKp">
+                    <connections>
+                        <action selector="swipeLeft:" destination="BKY-7R-rRh" id="Rkk-st-8aG"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="600.5" y="427.5"/>
         </scene>
