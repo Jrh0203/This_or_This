@@ -37,7 +37,7 @@ class BarChartViewController: UIViewController {
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
         barChartView.descriptionText = ""
         chartDataSet.colors = ChartColorTemplates.colorful()
-        chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(60);
+        chartDataSet.valueFont = chartDataSet.valueFont.fontWithSize(50)
         chartDataSet.valueColors = ChartColorTemplates.joyful()
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         
@@ -53,7 +53,8 @@ class BarChartViewController: UIViewController {
         barChartView.legend.enabled = false
         barChartView.drawGridBackgroundEnabled = false
         
-        //barChartView.xAxis.valueFormatter.minimumFractionDigits=0
+        barChartView.leftAxis.axisMinValue = 0;
+        barChartView.rightAxis.axisMinValue = 0;
         
         barChartView.data = chartData
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 1.0)
@@ -62,7 +63,7 @@ class BarChartViewController: UIViewController {
         super.viewDidLoad()
         left = 10
         right = 20
-        months = ["Jan", "Feb"]
+        months = ["", ""]
         let unitsSold = [left, right]
         
         setChart(months, values: unitsSold)

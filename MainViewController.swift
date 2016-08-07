@@ -208,7 +208,7 @@ class MainViewController: UIViewController {
         if (segue.identifier == "graphit") {
             var detailController = segue.destinationViewController as! BarChartViewController;
             detailController.left = (someInts[self.num].left)
-            detailController.right=(someInts[self.num].right)
+            detailController.right = (someInts[self.num].right)
         }
         
     }
